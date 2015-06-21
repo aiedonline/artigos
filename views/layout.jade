@@ -1,0 +1,41 @@
+!!! 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
+  body
+    header
+      nav
+        table
+          tr
+            td(align='left', valign='bottom')
+              img(src='/images/logo.png', width='140px')
+            td 
+              ul
+                li 
+                  a(href="/") Home
+                li 
+                  a(href="/contact") Contato
+        hr
+    section#wrapper
+      block content
+      footer
+        <br/><br/><br/>
+        section.css-table
+          section.three-column
+            section.cell
+              p
+                a(href='http://www.fateczl.edu.br') Conheça a FATEC Zona Leste
+            section.cell
+              p
+                a(href='http://www.aied.com.br') Participe dos projetos
+            section.cell
+              p
+                a(href='/contact') Publique um artigo
+        div Copyright © 
+          a(href='http://www.aied.com.br') www.aied.com.br
+          #{+new Date().getFullYear()}
+          a(href='/about') Sobre
+          |      |      
+          a(href='/contact') Contato
