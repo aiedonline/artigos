@@ -27,6 +27,7 @@ app.configure(function(){
   app.use(express.favicon(__dirname + '/images/letra.ico'));
 });
 
+
 app.configure('development', function(){
   app.use(express.errorHandler());
 });
