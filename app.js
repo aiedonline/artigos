@@ -62,6 +62,19 @@ app.get('/pessoa', function(req, res){
   });
 });
 
+// ROTAS LEGADAS QUANDO NAO HAVAI BANCO DE DADOS
+app.get('/artigoNode', function(req, res){
+  res.render('artigoNode', {
+    title: 'Artigo Node'
+  });
+});
+
+app.get('/artigoDocker', function(req, res){
+  res.render('artigoDocker', {
+    title: 'Artigo Docker'
+  });
+});
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Processo aguardando usuários na interface " + app.get('port'));
 });
