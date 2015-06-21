@@ -1,0 +1,185 @@
+extends layout
+block content
+    h1  Instalando a plataforma Node.js no Windows
+    p <i>Artigo publicado em 20/06/2015</i>
+    section.css-table
+        section.two-column
+            section.cell
+                h2 Resumo
+                p.
+                    Com o avanço da plataforma Web e Mobile os recursos de comunicação, responsividade, serviço confiável e escalabilidade se tornaram fundamentais para as soluções modernas. Nos últimos anos a idéia de MicroServiço
+                    trouxe novas necessidades para este cenário moderno. Aplicações curtas, de alto desempenho e que se interagem formando
+                    grande soluções é uma prática cada dia mais evidentes na Internet. Neste artigo vamos iniciar o estudo do Nodejs
+                    que vem prometendo atender este novo cenário.
+            section.cell
+                h2 Autor
+                p
+                    h4
+                        a(href='/pessoa?id=1', target='_blank') Prof. Me. Wellington Pinto de Oliveira
+    section.css-table
+        section.one-column
+            section.cell
+                h3 Introdução
+
+                p(class='texto')
+                    | Antes de iniciar a configuração do ambiente Node é importante contextualizar sua existência. Node.js é uma plataforma para aplicações server-sido, foi idealizada em 2009, pelo seu criador Ryan Dahl junto com colaboradores.
+                    | O que parece ser mais uma plataforma Web (assim como ASP.NET, JSP-Java, PHP) esta nasceu da necessidade de prover aplicações em real-time e alta escalabilidade com <b>baixo custo</b>.
+                p Outra grande vantagem do Node.js é a facilidade de se importar e organizar os módulos necessários para as aplicações desenvolvidas nesta tecnologia. Nada frusta mais um iniciante em programação do que ter se ambiente de desenvolvimento diferente dos tutorias na Internet, e essa diferença o impedir de completar seu aprendizado.
+                    | Embora pareça ‘grotesco’ a idéia de executar comando em terminal, estes simples comando que aprenderemos vão facilitar a vida do aprendiz. Mas sabe-se que é possível instalar programas editores de código que reduzirão a necessidade de comandos. Neste artigo vamos utilizar o Bloco de Notas do Microsoft Windows 7 e o Prompt de Comando.
+
+                p A Plataforma Node.js atua no Server-side (código do lado Servidor) com uma linguagem orientada a eventos, que vamos chamar de Callback. Sua sintaxe é baseada em JavaScript, um pouco diferente do convencional que usamos para validar formulários, ações, etc.. no lado Client-Side (Browser do usuário).
+
+                p
+                    | <strong>O que muda então?</strong> muda a forma de pensar e desenvolver as soluções, não podemos arrastar o que conhecemos de aplicações não orientadas a eventos para este <b>novo mundo</b>. O aluno deve iniciar o estudo desta plataforma com os exemplos básicos, ver e entender como funciona e este artigo será suficiente para isto.
+                    | Para o segundo estágio na aprendizagem do aluno, este deverá conhecer os padrões de projetos (isso mesmo Design patterns), para isso este pode recorrer a este link: <a href=‘http://pt.slideshare.net/cacois/nodejs-patterns-for-discerning-developers' arget='_blank'> Acessar apresentação </a>.
+
+                p
+                    | Os três padrões de projetos básicos para se aprender neste segundo estágio são:
+                    | <b>Pattern Module,
+                    | Pattern Factory e
+                    | Pattern Mixin</b>.
+
+            section.cell
+                h3 Características da Plataforma Node.js
+                p Trabalhar com threads não-bloqueantes é uma característica necessária para as plataformas WEB, o ASP.NET por exemplo em seu Framework 4.5 permite a programação assíncrona para evitar ‘gargalos’, saiba mais <a href=‘https://msdn.microsoft.com/pt-br/library/hh191443.aspx'target='_blank'> clicando aqui</a>.
+                    <br/> Node.js já nasce com esta característica.
+                p É possível desenvolver uma aplicação totalmente assíncrona no server-side com Node.js, isso ocorre pelo fato de que Javascript possui funções de callbacks: que são funções que executam-se internamente no parâmetro de uma função comum.
+            section.cell
+                h3 O que é Preciso?
+                p
+                    | O básico de um ambiente Node.js é acesso a Internet, ao Bloco de Notas e a instalação de um executável Node que vamos adquirir no próprio site do desenvolvedor.<br/>
+                    | Mesmo havendo a necessidade de uma instalação esta não é muito complexa como .NET e Java.
+
+                p   Acesse o site <a href='https://www.nodejs.org'>www.nodejs.org</a>
+
+                img(src='/images/artigos/nodemon/01_site.png')
+
+                p
+                p
+                    | Clique em <b>Install</b>, conforme exibido na figura acima. Um download será inicializado, para isso o site busca informações sobre seu Sistema Operacional para o melhor tipo de arquivo de instalação.<br/>
+                    | Caso esteja em um sistema operacional diferente do que pretende instalar, clique em <b>Downloads</b> para escolher o tipo de arquivo adequado.
+                p
+                p
+                    | Na data deste artigo o executável que contém o Node possui 8MB e o seguinte nome: <b>node-v0.12.4-x86</b><br/>
+                    | A versão oficial é a 0.12 e a plataforma é 32 bits (pelo x86)<br/>
+                    | Uma pergunta vem à mente quando falamos de <strong>versão de FRAMEWORK</strong>, qual versão vai estar no servidor? Para ASP.NET e Java esse é um grande problema, talvez um pouco menos para o ASP.NET (quando comparado com Java) pois os DataCenter já possuem as versões clássicas instaladas e estas convivem sem problemas.<br/>
+
+                p No servidor podemos ter muitas aplicações Node.js (Web) e uma versão Node (executável), o que vai diferir entre as aplicações Web são os módulos importados, onde cada aplicação Web possui um diretório interno com os arquivos de sua verão de FRAMEWORK.
+                p
+
+                img(src='/images/artigos/nodemon/02_estrutura.png')
+
+                p
+                p
+                    | Na figura acima podemos ver que dentro da aplicação (Web) chamada <b>Artigos</b> encontramos um diretório chamado <b>node_modules</b> no qual encontramos quatro módulos.
+                    | Estes módulos estão associados a esta aplicação (Web) e não a aplicação instalada, isso permite que tenha o ambiente de desenvolvimento em um Sistema Operacional Microsoft Windows e publique o resultado final em um Sistema Operacional Linux.
+                    | No próximo artigo vamos descrever como configurar sua aplicação (Web) para sempre permanecer fiel ao momento de sua construção.
+
+        section.cell
+            h3 Instalando e Configurando
+            p O processo de instalação é simples, conforme seqüência de imagens abaixo (Next to Finish).
+            img(src='/images/artigos/nodemon/03_installacao.png')
+            p Next >
+            img(src='/images/artigos/nodemon/04_installacao.png')
+            p
+            p Será preciso ter acesso aos privilégios do Administrador para completar a instalação.
+            p
+            img(src='/images/artigos/nodemon/05_installacao.png')
+            p Pressionar Next até o Finish.
+            p
+            h4 Configurando
+            p O único ponto chato de instalar e configurar o Node é ter a certeza que a variável de ambiente PATH foi alterada. Para o Mudo Java esta é uma tarefa fácil e rotineira, mais para quem está migrando de uma plataforma Microsoft ASP.NET isto não é normal.<br/>
+            p Primeiro temos que ter certeza do diretório em que está instalado o Nodejs, no meu caso quando foi instalado copiei o caminho, mais você pode também navegar em <b>C:\Program Files</b> ou <b>c:\Arquivos de Programas</b> até localizar a pasta Nodejs.<br>
+            p Vamos em Iniciar e exibir todos o programas, precisamos de entrar em Painel de Controle
+            p
+            img(src='/images/artigos/nodemon/06.png')
+            p
+            p Em painel de controle, localize Sistema, em meu caso sempre gosto de exibir em forma de Ícones(ver Figura abaixo)
+            p
+            img(src='/images/artigos/nodemon/07.png')
+            p
+            p Em Sistema, busque ir em Configurações Avançadas do Sistema (ver Figura abaixo)
+            p
+            img(src='/images/artigos/nodemon/08.png')
+            p
+            p Agora na janela de Propriedades do Sistema clicar no botão Variáveis de Ambiente (ver Figura abaixo)
+            p
+            img(src='/images/artigos/nodemon/09.png')
+            p
+            p Temos que garantir que o diretório de instalação do Nodejs está na variável PATH (ver Figura abaixo)
+            p
+            img(src='/images/artigos/nodemon/10.png')
+            p
+            p.
+                Quando invocamos um comando pelo Prompt do Windows, se este comando não está alocado do diretório Sistema
+                o sistema busca o comando nos diretórios cadastrados nessa variável. Isso será importante pois vamos invocar
+                constantemente os comandos <b>node</b> e <b>npm</b>
+            p
+            p Em meu caso, antes eu tinha o seguinte texto em Variáveis de Ambiente:
+                <br/>C:\Users\Wellington\AppData\Roaming\npm;
+            p E tive que alterar para:
+                <br/>C:\Users\Wellington\AppData\Roaming\npm;<b>C:\Program Files\nodejs</b>
+            p
+        section.cell
+            h3 Criando a Primeira Aplicação Web
+            p A segunda coisa mais frustrante quando aprendemos uma nova linguagem é não conseguir executar o famoso Hello Word
+                <br>Este passo é fundamental para gerar otimismo frente a um novo conhecimento, então tenha certeza que a Variável de Ambiente esteja configurada corretamente.
+            p Crie um novo diretório chamado <b>C:\Web\SiteA</b> conforme figura abaixo.
+            p
+            img(src='/images/artigos/nodemon/11.png')
+            p
+            p.
+                Utilizando o Bloco de Notas criei um arquivo chamado <b>app.js</b>, edite o seguinte código:
+            p
+            p.
+                1&nbsp;&nbsp;var http = require('http');<br/>
+                2&nbsp;&nbsp;http.createServer(function (req, res) {<br/>
+                3&nbsp;&nbsp;&nbsp;&nbsp;res.writeHead(200, {'Content-Type': 'text/plain'});<br/>
+                4&nbsp;&nbsp;&nbsp;&nbsp;res.end('Hello World\n');<br/>
+                5&nbsp;&nbsp;}).listen(1337, '127.0.0.1');<br/>
+                6&nbsp;&nbsp;console.log('Server running at http://127.0.0.1:1337/');<br/>
+            a(href='images/artigos/nodemon/app.zip') Clique aqui para obter o código fonte
+
+            p
+            p.
+                Na Linha 1 estamos carregando um módulo chamado http, não se assuste com novos nomes, aos poucos você vai aprendendo;<br />
+                Na Linha 2 estamos criando um Serviço Socket, e passando uma função que será executada quando a aplicação for iniciada;<br />
+                Na Linha 3 estamos dizendo que o Content-Type será texto sem marcação, ou seja, um texto simples sem HTML envolvido;<br />
+                Na Linha 4 estamos escrevendo na saída (veja que a função tem duas variáveis sendo definidas na Linha 2, uma chamada req que
+                    significa REQUEST e a segunda res que significa RESPONSE. Quando queremos obter dados do cliente recorremos a REQUEST e
+                    quando queremos enviar dados para o cliente utilizamos RESPONSE).<br />
+                Na Linha 5 invocamos o método Listen para iniciar um serviço de escuta que deverá monitorar as requisições vinda dos clientes pela porta 1337 de seu computador;<br />
+
+            p
+            p   Para executar é simples, primeiro abra o Prompt de Comandos do Windows, se quiser abrir como Administrador melhor ainda. Lembre-se que Antivírus podem atrapalhar nesse momento.
+            p   Chegou a hora de executar o s primeiros comandos, primeiro vamos navegar com o comando CD para dentro do diretório do Site. (ver figura abaixo)
+
+            p
+            img(src='/images/artigos/nodemon/12.png')
+            p
+            p Agora é só executar o comando Node e passando como parâmetro o arquivo app.js que acabamos de construir. (ver figura abaixo)
+            p
+            img(src='/images/artigos/nodemon/13.png')
+            p
+            p Ao pressionar Enter, a Linha 6 de nosso código (ver listagem acima) escreve no log um mensagem que o servidor está ativo e aguardando na porta 1337. (ver figura abaixo)
+            p
+            img(src='/images/artigos/nodemon/14.png')
+            p
+            p Agora é simples, basta abrir um Navegador e digitar a seguinte url: http://localhost:1337
+            p
+            img(src='/images/artigos/nodemon/15.png')
+            p
+            p Pronto, veja a resposta do seu primeiro serviço Nodejs, tranquilo.
+
+        section.cell
+            h3 Conclusão
+            p.
+                Embora muitas dúvidas tenham ficado no ar, neste artigo é possível ver que Nodejs é uma solução simples
+                e funcional, em poucas instruções criamos um serviço que responde por uma determinada porta. Mesmo que
+                pareça arcaico a demonstração deste artigo traz para o aprendiz a oportunidade de conhecer uma nova tecnologia<br/>
+                Nos próximos artigos vamos avançar em busca de construir aplicações Web profissionais e sempre avançando nas novidades da tecnologia.
+
+
+
+
+

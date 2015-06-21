@@ -1,0 +1,69 @@
+extends layout
+block content
+    h1  Disponibilidade de Serviço com Docker
+    p <i>Artigo publicado em 20/06/2015</i>
+    section.css-table
+        section.two-column
+            section.cell
+                h2 Resumo
+                p.
+                    Aplicações Web, que busca virtualizar aplicações em nuvem através da linguagem
+                     JavaScript que possibilitará o usuário rodar aplicações através de containers por Docker exultando
+                     em uma aplicação executada no browser, que levará para qualquer usuário um gerenciador de aplicações na nuvem,
+                     podendo continuar sua utilização de qualquer lugar,
+                     buscando diminuir consideravelmente os custos de software e principalmente de hardware para os usuários.
+            section.cell
+                h2 Autores
+                p
+                    h4
+                        p.
+                            Esdras Portilho<br/>
+                            Stephanie Barcelos<br/>
+                            Thais Arcanjo<br/>
+                h2 Orientador
+                    h4
+                        a(href='/pessoa?id=1', target='_blank') Prof. Me. Wellington Pinto de Oliveira
+                p
+                a(href='/images/artigos/docker/tcc.pdf') Download do material completo
+    section.css-table
+        section.one-column
+            section.cell
+                h3 Plataforma Docker
+                p   Docker é uma plataforma aberta para desenvolvedores e administradores de sistemas para a criação e execução de aplicações distribuidas. Ela é composta pela Docker Engine e Docker hub. Docker Engine é uma ferramenta de tempo de execução e pacote portatil leve, já o Docker Hub trata-se de um serviço de nuvem usado para compartilhar aplicativos e automatizar fluxos de trabalho.
+                p   Docker permite que aplicações sejam rapidamente montadas a partir de componentes e elimina o atrito entre os ambientes de desenvolvimento, controle de qualidade e produção. Como resultado é possivel enviar mais rapido e executar o mesmo aplicativo inalterado em laptops, data centers virtualizados e em qualquer nuvem.
+                p   Através do Docker desenvolvedores podem construir qualquer aplicativo em qualquer idioma usando qualquer conjunto de ferramentas. Sendo totalmente portateis, os apps "Dockerized" podem ser executados em qualquer lugar. Exemplos: OS X, Windows, servidores de controle de qualidade que executam o Ubuntu na nuvem, e máquinas virtuais rodando Red Hat.
+                p   Os desenvolvedores podem começar a desenvolver usando qualquer um dos mais de 13.000 aplicativos disponíveis em Docker Hub. Docker gerencia e controla as alterações e dependências, tornando mais fácil para os administradores de sistemas a entender como os aplicativos de trabalho são construidos. E com Docker Hub, os desenvolvedores podem automatizar suas linhas de comando e compartilhar partes de projetos com os colaboradores através de repositórios públicos ou privados.
+                p   Docker ajuda administradores a implantar e executar qualquer aplicativo em qualquer infraestrutura, de forma rápida e confiável. Fornecendo para administradores de sistemas ambientes padronizados para suas equipes de desenvolvimento, controle de qualidade e produção, reduzindo "trabalho na maquina real". Por "Dockerizing" a plataforma de aplicativo e suas dependências, os administradores de sistemas podem abstrair diferenças do sistema operacional distribuido e infraestrutura subjacente.
+                p   Além disso, a padronização na Docker Engine como unidade de implantação dá aos administradores flexibilidade nas cargas de trabalho executado. Quer em data center  virtualizados ou nuvens públicas, implantação de carga de trabalho é menos limitado pela tecnologia de infra-estrutura e em vez disso é orientado para as prioridades e políticas de negócios. Além disso, a execução leve do Docker Engine permite escalonamento rápido em resposta às mudanças na demanda.
+                p   Docker compreende apenas a aplicação e suas dependencias, sendo executado como um processo isolado no espaço do sistema operacional do usário hospedeiro, compartilhando o Kernel com outros recipientes. Tendo os mesmos beneficios de recursos de uma maquina virtual, porém muito mais eficiente e portátil.
+                p   Um container Docker - atualmente utilizando Linux Containers (LXC) - se destina a executar uma única aplicação, criando containers altamente específicos destinados a executar o MySQL, Nginx, Redis, ou algum outro aplicativo.
+                p   Quando é preciso executar dois aplicativos ou serviços distintos em um ambiente Docker é possível executá-los juntos em um único container ou pode-se usar dois containers separados, o recomendável. O Docker tem um escopo específico. É projetado para a aplicação não tendo como escopo a uma aplicação específica. Em vez disso, LXC tem como escopo a uma instância do Linux. Da mesma forma, as tecnologias container baseados no Windows são escopo para uma instância do Windows.
+                p   A máquina virtual, por outro lado, tem um alcance mais amplo. Ele tem como escopo a qualquer sistema operacional suportado. Ao usar a virtualização completa-máquina, você não está limitado a apenas Linux ou Windows somente, podendo executar praticamente qualquer versão recente do sistema operacional.
+                p   Um sistema totalmente virtualizado normalmente leva alguns minutos para começar, containers LXC leva segundos, e às vezes até menos de um segundo.
+                p   Outra diferença da máquina virtual está na utilização do espaço, segue exemplo da figura abaixo. Máquinas virtuais consomem uma grande quantidade de CPU e memória, podendo aumentar o tamanho da máquina virtual ao tentar lidar com todas as dependências e pacotes necessários. Digamos que você tem uma imagem de recipiente que é de 1GB de tamanho. Se você quiser usar uma máquina virtual completa, você precisa ter 1GB vezes x número de Máquinas virtuais que você quer. Com Docker você pode compartilhar a maior parte do 1GB e se você tem 1000 containers você ainda pode ter apenas um pouco mais de 1 GB de espaço para a utilização dos containers, assumindo que todos tenham a imagem do mesmo sistema operacional em execução.
+                p
+                img(src='/images/artigos/docker/01.png')
+                p
+                p   Como podemos ver na figura acima que além de incluir a aplicação e suas bibliotecas, na máquina virtual é requerido o uso de um sistema operacional cliente, transformando o que se poderia ser originalmente em poucos megabytes em gigabytes.
+                p   Outra desvantagem de utilizar a máquina virtual, do ponto de vista de um desenvolvedor, as ferramentas para a criação de aplicativos e testes são limitados. Além de produzir uma sobrecarga significativa de desempenho, especialmente ao executar operações de entrada e saída.
+                p   LXCs são leves e permitem executar várias instâncias isoladas no mesmo host. Eles compartilham um único núcleo, mas pode ter uma definição de conjunto para o número de recursos que pode consumir. LXCs permiti a circulação segura de casos isolados sem interferência entre essas instâncias.
+                p   Docker é uma camada adicional de LXCs, para torná-los mais fáceis de usar em operações mais complexas. Tendo como diferencial:
+                p   1.    Versão com rastreabilidade completa dos estados de produção em servidor de volta para o desenvolvedor container real;
+                p   2.    Ele ajuda a evitar a dependência, fornecendo um isolamento completo de recursos, rede e conteúdo;
+                p   3.    Constrói containers facilmente compartilháveis de forma incremental;
+                p   4.    Suporta um ecossistema de compartilhamento de imagem;
+                p   5.    Sua reutilização container permite criar componentes mais especializados;
+                p   6.    Usa primitivas do sistema operacional;
+                p   7.    Ele fornece uma linha distinta de separação de funções que torna a vida mais fácil para os desenvolvedores
+            section.cell
+                h3 Conclusão
+                p   Por usar CoreOS e Docker é possivel realizar um melhor controle das aplicações, além de torna-las mais leves para inicialização e restauração de estados sem que gere dependências.
+                p   Além disso, o fato de se usar Node.js para se manipular os containers Docker de forma assíncrona e não bloqueante permite que muitos usuários acessem o mesmo container sem que venha a causar deadlock e/ou grandes lentidões que sistemas em nuvem possam vir a enfrentar.
+                p   A sua arquitetura descentralizada permite uma abrangência global, capaz de integrar recursos pertencentes a diversos domínios sem grandes investimentos, características importantes para o trabalho colaborativo, a economia de recursos e na contribuição do meio-ambiente.
+                p
+                h3 O Trabalho de Conclusão de Curso completo pode ser <a href='/images/artigos/docker/tcc.pdf'>obtido clicando aqui....</a>.
+
+
+
+
+
